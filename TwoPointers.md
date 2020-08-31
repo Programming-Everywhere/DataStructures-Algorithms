@@ -1,6 +1,6 @@
 1. [167. Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/)
-2. 
-3.
+2. [633. Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/description/)
+3. 
 # 1.Two Sum II - Input array is sorted
 ```java
 /** since it is sorted, we can use two pointers from left and right.
@@ -25,6 +25,25 @@ class Solution {
          }
       } 
       return res;
+   }
+}
+```
+# 2. Sum of Square Numbers
+```java
+/**
+1. two pointers
+2. the second one can be sqrt(c), because we will have ptr2*ptr2
+*/ 
+class Solution {
+   public boolean judgeSquareSum(int c) {
+      int p1 = 0, p2 = (int)Math.sqrt(c);
+      while(p1 <= p2) {
+         int sum = p1*p1 + p2*p2;
+         if(sum == c) return true;
+         else if(sum > c) p2--;
+         else p1++;
+      }
+      return false;
    }
 }
 
