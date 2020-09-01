@@ -47,7 +47,7 @@ class Solution {
    }
 }
 ```
-#3. Reverse Vowels of a String
+# 3. Reverse Vowels of a String
 ```java
 /**
 Write a function that takes a string as input and reverse only the vowels of a string.
