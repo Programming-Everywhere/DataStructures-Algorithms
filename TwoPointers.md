@@ -1,6 +1,6 @@
 1. [167. Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/)
 2. [633. Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/description/)
-3. 
+3. [345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/description/)
 # 1.Two Sum II - Input array is sorted
 ```java
 /** since it is sorted, we can use two pointers from left and right.
@@ -46,5 +46,42 @@ class Solution {
       return false;
    }
 }
+```
+#3. Reverse Vowels of a String
+```java
+/**
+Write a function that takes a string as input and reverse only the vowels of a string.
+Example 1:
 
+Input: "hello"
+Output: "holle"
+*/
+class Solution {
+    public String reverseVowels(String s) {
+        StringBuilder sb = new StringBuilder();
+        char[] arr = s.toCharArray();
+        int left = 0, right = s.length() - 1;
+       
+        while(left < right) {
+            if(isVowel(arr[left]) && isVowel(arr[right])) {
+                char temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;  
+                left++;
+                right--;
+            }
+            else if(!isVowel(arr[left])) {
+                left++;
+            }
+            else if(!isVowel(arr[right])) {
+                right--;
+            }
+        }
+        return sb.append(arr).toString();
+    }
+    private boolean isVowel(char c) {
+        return c == 'a' || c == 'e' || c =='i' || c == 'o' || c == 'u' ||
+            c == 'A' || c == 'E' || c =='I' || c == 'O' || c == 'U';
+    }
+}
 ```
