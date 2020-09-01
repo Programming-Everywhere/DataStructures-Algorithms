@@ -2,6 +2,7 @@
 2. [633. Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/description/)
 3. [345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/description/)
 # 1.Two Sum II - Input array is sorted
+[leetcode](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/)
 ```java
 /** since it is sorted, we can use two pointers from left and right.
 1. if it is bigger than target, means, our right side is too big, right--
@@ -29,6 +30,7 @@ class Solution {
 }
 ```
 # 2. Sum of Square Numbers
+[leetcode](https://leetcode.com/problems/sum-of-square-numbers/description/)
 ```java
 /**
 1. two pointers
