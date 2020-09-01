@@ -48,6 +48,7 @@ class Solution {
 }
 ```
 # 3. Reverse Vowels of a String
+[leetcode](https://leetcode.com/problems/reverse-vowels-of-a-string/)
 ```java
 /**
 Write a function that takes a string as input and reverse only the vowels of a string.
