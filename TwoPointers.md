@@ -1,6 +1,7 @@
 1. [167. Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/)
 2. [633. Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/description/)
 3. [345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/description/)
+4. [680. Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/)
 # 1.Two Sum II - Input array is sorted
 [leetcode](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/)
 ```java
@@ -85,6 +86,40 @@ class Solution {
     private boolean isVowel(char c) {
         return c == 'a' || c == 'e' || c =='i' || c == 'o' || c == 'u' ||
             c == 'A' || c == 'E' || c =='I' || c == 'O' || c == 'U';
+    }
+}
+```
+# 4. Valid Palindrome II
+```java
+/**
+helper()
+*/
+class Solution {
+    public boolean validPalindrome(String s) {
+        int left = 0, right = s.length() - 1;
+        
+        while(left < right) {
+            if(s.charAt(left) == s.charAt(right)) {
+                left++;
+                right--;
+            }
+            else {
+                return helper(s, left + 1, right) || helper(s, left, right - 1);   
+            }
+        }
+        return true;
+    }
+    private boolean helper(String s, int left, int right) {
+        while(left < right) {
+            
+            if(s.charAt(left) != s.charAt(right)) {
+                return false;
+            }
+            
+            left++;
+            right--;
+        }
+        return true;
     }
 }
 ```
