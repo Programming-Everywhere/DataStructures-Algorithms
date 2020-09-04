@@ -4,6 +4,7 @@
 4. [680. Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/)
 5. [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
 6. [141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/description/)
+7. [524. Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/description/)
 # 1.Two Sum II - Input array is sorted
 [leetcode](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/)
 ```java
@@ -179,4 +180,39 @@ public class Solution {
         return false;
     }
 }
+```
+# 7. Longest Word in Dictionary through Deleting
+[leetcode](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/description/)
+```java
+class Solution {
+    public String findLongestWord(String s, List<String> d) {
+        
+        String longest = "";
+        for(String target: d) {
+            int l1 = longest.length(), l2 = target.length();
+            if(l1 > l2 || (l1 == l2 && longest.compareTo(target) < 0)) {
+                continue;
+            }
+            if(helper(s, target)) {
+                longest = target;
+            }
+        }
+        return longest; 
+    }
+    
+    private boolean helper(String source, String target) {
+            int p1 = 0, p2 = 0;
+            while(p1 < source.length() && p2 < target.length()) {
+                if(source.charAt(p1) == target.charAt(p2)) {
+                    p1++;
+                    p2++;
+                }
+                else {
+                    p1++;
+                }
+            }
+            return p2 == target.length();
+    }
+}
+
 ```
