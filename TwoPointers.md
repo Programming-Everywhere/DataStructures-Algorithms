@@ -2,6 +2,8 @@
 2. [633. Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/description/)
 3. [345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/description/)
 4. [680. Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/)
+5. [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
+6. [141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/description/)
 # 1.Two Sum II - Input array is sorted
 [leetcode](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/)
 ```java
@@ -148,3 +150,33 @@ class Solution {
             j--;
         }}}
   ```
+# 6. Linked List Cycle
+[leetcode](https://leetcode.com/problems/linked-list-cycle/description/)
+```java
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        if(head == null) return false;
+        ListNode runner = head;
+        ListNode walker = head;
+        while(runner.next != null && runner.next.next != null) {
+            runner = runner.next.next;
+            walker = walker.next;
+            if(walker == runner) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+```
