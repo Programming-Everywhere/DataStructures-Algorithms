@@ -47,6 +47,8 @@ one lcass has one instance, support htis instance the global asscess point.
 ### Intent 
 Create a object without showing the details, but also provide a object creation interface. 
 ### Class Diagram
+![Screen Shot 2020-09-09 at 9 39 45 AM](https://user-images.githubusercontent.com/19642027/92605998-6dcb5800-f280-11ea-9764-1c0f385d452b.png)
+
 1. Simple factory takes Instantiated Operation into a single class. 
 2. Simple factory will decide which sub class to do instatition. 
 3. Clients won't know the details of the sub class, and when change sub class, the client don't have to change. 
