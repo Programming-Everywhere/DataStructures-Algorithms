@@ -1,3 +1,6 @@
+-1. 215. Kth Largest Element in an Array
+-2. 347. Top K Frequent Elements
+
 # 1. Kth Element
 [leetcode](https://leetcode.com/problems/kth-largest-element-in-an-array/description/)
 ```java
@@ -61,8 +64,10 @@ class Solution {
     arr[i] = arr[j];
     arr[j] = temp;
   }
-  
-
 }
+```
+# 2.Top K Frequent Elements
+[leetcode](https://leetcode.com/problems/top-k-frequent-elements/description/)
+```java
 
 ```
