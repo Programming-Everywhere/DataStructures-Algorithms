@@ -40,7 +40,7 @@ class Solution {
       int pivot = arr[high];
       for(int j = low; j < high; j++) {
          if(arr[j] < pivot) {
-           swap(arr, arr[i], arr[j]);
+           swap(arr, i, j);
            i++;
          }
       }
