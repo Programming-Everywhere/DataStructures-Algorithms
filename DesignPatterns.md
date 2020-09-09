@@ -53,6 +53,15 @@ Create a object without showing the details, but also provide a object creation 
 2. Simple factory will decide which sub class to do instatition. 
 3. Clients won't know the details of the sub class, and when change sub class, the client don't have to change. 
 ```java
+public interface Product {
+}
+public class ConcreateProduct implements Product {
+}
+public class ConcreateProduct1 implements Product {
+}
+public class ConcreateProduct2 implements Product {
+}
+
 class SimpleFactory {
    public Product createProduct(int type) {
        if(type == 1) return new ConcreateProduct1();
