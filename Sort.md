@@ -45,7 +45,7 @@ class Solution {
          }
       }
       swap(arr, i, high);
-      return i+1;
+      return i;
   }
   /** sort 再用
   public void sort(int[] arr, int low, int high) {
