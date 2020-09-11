@@ -69,5 +69,31 @@ class Solution {
 # 2.Top K Frequent Elements
 [leetcode](https://leetcode.com/problems/top-k-frequent-elements/description/)
 ```java
-
+class Solution {
+    public int[] topKFrequent(int[] nums, int k) {
+        /** [1,1,1,2,2,3], k = 2
+            1=3
+            2=2
+            3=1
+        */
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i: nums) {
+            map.put(i, map.getOrDefault(i, 0) + 1);
+        }
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> map.get(a) - map.get(b));
+        for(int key: map.keySet()) {
+            pq.add(key);
+            if(pq.size() > k) {
+                pq.poll();
+            }
+        }
+        int[] res = new int[k];
+        int j = 0;
+        while(!pq.isEmpty()) {
+            res[j] = pq.poll();
+            j++;
+        }
+        return res;
+    }
+}
 ```
