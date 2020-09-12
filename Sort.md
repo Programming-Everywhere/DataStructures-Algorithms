@@ -69,13 +69,9 @@ class Solution {
 # 2.Top K Frequent Elements
 [leetcode](https://leetcode.com/problems/top-k-frequent-elements/description/)
 ```java
+//1. PQ to add keys as the value's increasing order, then add to pq, whenever pq is more than k, then pop, rest of pq will be the result. Top K.
 class Solution {
     public int[] topKFrequent(int[] nums, int k) {
-        /** [1,1,1,2,2,3], k = 2
-            1=3
-            2=2
-            3=1
-        */
         Map<Integer, Integer> map = new HashMap<>();
         for(int i: nums) {
             map.put(i, map.getOrDefault(i, 0) + 1);
@@ -96,4 +92,44 @@ class Solution {
         return res;
     }
 }
+
+/**2. Put all same value,(frenquency) keys into the same bucket. 
+Now the bucket will have the same keys with same frenquency. 
+Keep in mind, the value is the index of bucket
+*/
+class Solution {
+    public int[] topKFrequent(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i: nums) {
+            map.put(i, map.getOrDefault(i, 0) + 1);
+        }
+        
+        List<Integer>[] buckets = new ArrayList[nums.length + 1];
+        for(int key: map.keySet()) {
+            int value = map.get(key);
+            if(buckets[value] == null) {
+                buckets[value] = new ArrayList<>();
+            }
+            buckets[value].add(key);
+        }
+        // value is the index!
+        int[] res = new int[k];
+        int j = 0;
+        for(int i = nums.length; i >= 0; i--) {
+            if(buckets[i] == null) {
+                continue;
+            }
+            else {
+                for(int l: buckets[i]) {
+                    res[j] = l;
+                    j++;
+                }
+                if(j ==k) break;
+            }
+        }
+        return res; 
+    }
+}
+   
+
 ```
