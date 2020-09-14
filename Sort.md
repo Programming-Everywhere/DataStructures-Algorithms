@@ -131,7 +131,7 @@ class Solution {
     }
 }
 ```
-# 3. Sort Colors 荷兰国企问题 三个pointers
+# 3. Sort Colors 荷兰国旗问题 三个pointers
 [leetcode](https://leetcode.com/problems/sort-colors/)
 ```java
 class Solution {
