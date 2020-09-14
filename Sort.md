@@ -130,6 +130,42 @@ class Solution {
         return res; 
     }
 }
-   
-
+```
+# 3. Sort Colors 荷兰国企问题 三个pointers
+[leetcode](https://leetcode.com/problems/sort-colors/)
+```java
+class Solution {
+    public void sortColors(int[] nums) {
+        int zero = 0, one = 0, two = nums.length - 1;
+        while(one <= two) {
+            if(nums[one] == 0) {
+                swap(nums,zero, one);
+                zero++;
+                one++;
+            }
+            else if(nums[one] == 2) {
+                swap(nums, two, one);
+                two--;
+            }
+            else {
+                one++;
+            }
+        }
+    }
+    private void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
+/**
+zero  one  two    num[one]     nums 
+0     0     5       2         [0,0,2,1,1,2]
+0     0     4       0         [0,0,2,1,1,2]
+1     1     4       0         [0,0,2,1,1,2]
+2     2     4       2         [0,0,1,1,2,2]
+2     2     3       1          [0,0,1,1,2,2]
+2     3     3       1          [0,0,1,1,2,2]
+done
+*/
 ```
