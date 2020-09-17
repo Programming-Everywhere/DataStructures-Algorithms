@@ -1,7 +1,7 @@
 # Greedy - 贪心思想
 1. [(455) Assign Cookies](https://leetcode.com/problems/assign-cookies/)
 2. [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/description/)
-
+3. [452. Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/)
 # 1. (455) Assign Cookies
 [leetcode](https://leetcode.com/problems/assign-cookies/)
 ```java
@@ -52,6 +52,44 @@ class Solution {
             }
         }
         return intervals.length - count;
+    }
+}
+```
+# 3. (452) Minimum Number of Arrows to Burst Balloons
+[leetcode](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/)
+```java
+/**
+核心思想：跟上题一样，sort y-axis，然后比较右和下个左，如果大 不管，如果小 就arrow++，因为不会沾到下个气球，并且把指标发在这个气球的右边，对比下一个。
+*/
+class Solution {
+    public int findMinArrowShots(int[][] points) {
+        /**[start,end]
+           [10, 16], 
+           [2,  8],
+           [1,  6],
+           [7,  12]]
+           
+           [
+           [1,  6],
+             [2,  8],
+                 [7,  12]
+                     [10, 16]]
+           ]
+        */
+        if(points == null || points.length == 0) return 0;
+        Arrays.sort(points, (a, b) -> a[1]- b[1]);
+        
+        int preEnd = points[0][1];
+        int count = 1;
+        for(int i = 1; i < points.length; i++) {
+            
+            int nextStart = points[i][0];
+            if(preEnd < nextStart) {
+                count++;
+                preEnd = points[i][1];
+            }
+        }
+        return count;
     }
 }
 ```
