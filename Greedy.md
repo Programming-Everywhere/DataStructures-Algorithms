@@ -2,6 +2,7 @@
 1. [(455) Assign Cookies](https://leetcode.com/problems/assign-cookies/)
 2. [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/description/)
 3. [452. Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/)
+4. [406. Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/)
 # 1. (455) Assign Cookies
 [leetcode](https://leetcode.com/problems/assign-cookies/)
 ```java
@@ -92,4 +93,50 @@ class Solution {
         return count;
     }
 }
+```
+# 4. (406) Queue Reconstruction by Height
+[leetcode](https://leetcode.com/problems/queue-reconstruction-by-height/)
+```java
+/**
+把身高的人放在最前面，这样一会插队（queue）先插他们，然后身高低的却是有同样 k 的可以插到 高的前方。（用index）
+1. 身高按降序
+2. 前方人数按升序。
+*/
+class Solution {
+    public int[][] reconstructQueue(int[][] people) {
+        if(people == null || people.length == 0) return new int[][]{};
+
+        Arrays.sort(people, (a, b) -> (a[0] == b[0] ? a[1] - b[1]: b[0] - a[0]));
+        // if h is equal, then k increasing order
+        // if h is not equal, k decreasing order 
+
+        List<int[]> queue = new ArrayList<>();
+        for(int[] p: people) {
+            queue.add(p[1], p);
+        }      
+        return queue.toArray(new int[queue.size()][]);
+    }
+}
+
+/**
+
+排好后：
+7 0 
+7 1 
+6 1 
+5 0 
+5 2 
+4 4 
+
+index：
+0 1 1 0 2 4 QUEUE
+
+插完后：
+5 0 
+7 0 
+5 2 
+6 1 
+4 4 
+7 1 
+*/
 ```
