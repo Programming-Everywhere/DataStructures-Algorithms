@@ -1,7 +1,9 @@
 # DFS
-- 1. [1239. Maximum Length of a Concatenated String with Unique Characters](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
+- [1. (1239) Maximum Length of a Concatenated String with Unique Characters](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
 
 ## 1. (1239) Maximum Length of a Concatenated String with Unique Characters
+![Untitled (Draft)-1](https://user-images.githubusercontent.com/19642027/93666920-0f586380-fa50-11ea-99ec-d02bae389f94.jpg)
+
 [leetcode](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
 ```java
 class Solution {
