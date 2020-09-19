@@ -1,6 +1,6 @@
 <!-- GFM-TOC -->
 * [DFS](#dfs)
-    * [1. (1239) Maximum Length of a Concatenated String with Unique Characters](#1-Maximum Length of a Concatenated String with Unique Characters)
+    * [1. Maximum Length of a Concatenated String with Unique Characters](#1-Maximum Length of a Concatenated String with Unique Characters)
 
 
 * [BFS](#bfs)
