@@ -3,6 +3,7 @@
 2. [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/description/)
 3. [452. Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/)
 4. [406. Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/)
+5. [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
 # 1. (455) Assign Cookies
 [leetcode](https://leetcode.com/problems/assign-cookies/)
 ```java
@@ -139,4 +140,22 @@ index：
 4 4 
 7 1 
 */
+```
+# 5. (121) Best Time to Buy and Sell Stock
+[leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        if(prices == null || prices.length == 0) return 0;
+        int min = prices[0];
+        int profit = 0;
+        for(int i = 1; i < prices.length; i++) {
+            if(prices[i] < min) {
+                min = prices[i];
+            }
+            profit = Math.max(profit,prices[i] - min);
+        }
+        return profit;
+    }
+}
 ```
