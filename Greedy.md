@@ -4,6 +4,7 @@
 3. [452. Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/)
 4. [406. Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/)
 5. [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
+6. [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/)
 # 1. (455) Assign Cookies
 [leetcode](https://leetcode.com/problems/assign-cookies/)
 ```java
@@ -159,3 +160,23 @@ class Solution {
     }
 }
 ```
+# 6. (122) Best Time to Buy and Sell Stock II
+[leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/)
+```java
+// two pointers, and they always be together when checking it. 
+class Solution {
+    public int maxProfit(int[] prices) {
+        int p1 = 0, p2 = 1;
+        int profit = 0;
+        while(p1 < prices.length && p2 < prices.length) {
+            if(prices[p2] > prices[p1]) {
+                profit += prices[p2] - prices[p1];
+            }
+            p1++;
+            p2++;
+        }
+        return profit;
+    }
+}
+```
+
