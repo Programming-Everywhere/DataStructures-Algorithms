@@ -5,6 +5,8 @@
 4. [406. Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/)
 5. [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
 6. [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/)
+7. [605. Can Place Flowers](https://leetcode.com/problems/can-place-flowers/description/)
+
 # 1. (455) Assign Cookies
 [leetcode](https://leetcode.com/problems/assign-cookies/)
 ```java
@@ -178,5 +180,36 @@ class Solution {
         return profit;
     }
 }
+```
+# 7. (605) Can Place Flowers
+[leetcode](https://leetcode.com/problems/can-place-flowers/description/)
+```java
+class Solution {
+    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+        for(int i = 0; i < flowerbed.length; i++) {
+            if(flowerbed[i] == 0) {
+                if(i == 0){
+                   if (i == flowerbed.length - 1 || flowerbed[i + 1] == 0){
+                       flowerbed[i] = 1;
+                       n--;
+                   }  
+                }
+                else if(flowerbed[i-1] == 0) {
+                    if (i == flowerbed.length - 1 || flowerbed[i + 1] == 0){
+                       flowerbed[i] = 1;
+                       n--;
+                   }  
+                }
+            }
+        }
+        return n <= 0;
+    }
+}
+/*
+                    1. i == 0, i = flowerbed.length - 1 => {0} yes
+                    2. i == 0, flowerbed[i + 1] == 0, flowerbed[i] == 0, so yes 
+                    3. flowerbed[i-1] == 0, i == flowerbed.length - 1, flowerbed[i] == 0, yes
+                    4. flowerbed[i-1] == 0, flowerbed[i + 1] == 0 -> yes
+*/
 ```
 
