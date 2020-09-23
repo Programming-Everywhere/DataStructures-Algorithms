@@ -6,6 +6,7 @@
 5. [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
 6. [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/)
 7. [605. Can Place Flowers](https://leetcode.com/problems/can-place-flowers/description/)
+8. [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)
 
 # 1. (455) Assign Cookies
 [leetcode](https://leetcode.com/problems/assign-cookies/)
@@ -212,4 +213,24 @@ class Solution {
                     4. flowerbed[i-1] == 0, flowerbed[i + 1] == 0 -> yes
 */
 ```
+# 8. (392) Is Subsequence
+[leetcode](https://leetcode.com/problems/is-subsequence/)
+```java
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        int p1 = 0, p2 = 0;
+        while(p1 < s.length() && p2 < t.length()) {
+            if(s.charAt(p1) == t.charAt(p2)) {
+                p1++;
+                p2++;
+            }
+            else {
+                p2++;
+            }
+        }
+        return p1 == s.length();
+    }
+}
+```
+
 
