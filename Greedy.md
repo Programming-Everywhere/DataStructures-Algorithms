@@ -7,6 +7,7 @@
 6. [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/)
 7. [605. Can Place Flowers](https://leetcode.com/problems/can-place-flowers/description/)
 8. [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)
+9. [665. Non-decreasing Array](https://leetcode.com/problems/non-decreasing-array/)
 
 # 1. (455) Assign Cookies
 [leetcode](https://leetcode.com/problems/assign-cookies/)
@@ -232,5 +233,33 @@ class Solution {
     }
 }
 ```
-
+# 9. (665)Non-decreasing Array
+[leetcode](https://leetcode.com/problems/non-decreasing-array/)
+```java
+class Solution {
+    public boolean checkPossibility(int[] nums) {
+        // 4 2 3 
+        // 4 2 1
+        // 3 4 2 3
+        
+        //1. a flag
+        boolean modified = false;
+        for(int i = 1; i < nums.length; i++) {
+            if( nums[i] < nums[i - 1]) {
+                if(modified == true) {
+                    return false;
+                }
+                else {
+                    //2. check the current with current'pre'pre value 
+                    if(i - 2 >= 0 && nums[i - 2] > nums[i]) {
+                        nums[i] = nums[i - 1];
+                    }
+                    modified = true;
+                }
+            }
+        }
+        return true;
+    }
+}
+```
 
