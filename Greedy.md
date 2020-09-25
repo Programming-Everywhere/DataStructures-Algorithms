@@ -8,6 +8,7 @@
 7. [605. Can Place Flowers](https://leetcode.com/problems/can-place-flowers/description/)
 8. [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)
 9. [665. Non-decreasing Array](https://leetcode.com/problems/non-decreasing-array/)
+10. [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/description/)
 
 # 1. (455) Assign Cookies
 [leetcode](https://leetcode.com/problems/assign-cookies/)
@@ -262,4 +263,23 @@ class Solution {
     }
 }
 ```
+
+# 10. (53) Maximum Subarray
+[leetcode](https://leetcode.com/problems/maximum-subarray/description/)
+```java
+class Solution {
+    public int maxSubArray(int[] nums) {
+    
+        int currSum = nums[0];
+        int finalSum = nums[0];
+        for(int i = 1; i < nums.length; i++) {
+            currSum = Math.max(currSum + nums[i], nums[i]);
+            finalSum = Math.max(finalSum, currSum);
+        }
+        return finalSum;
+    }
+}
+
+```
+
 
