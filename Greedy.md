@@ -9,6 +9,7 @@
 8. [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)
 9. [665. Non-decreasing Array](https://leetcode.com/problems/non-decreasing-array/)
 10. [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/description/)
+11. [763. Partition Labels](https://leetcode.com/problems/partition-labels/)
 
 # 1. (455) Assign Cookies
 [leetcode](https://leetcode.com/problems/assign-cookies/)
@@ -281,5 +282,53 @@ class Solution {
 }
 
 ```
+# 11. 763. Partition Labels
+[leetcode](https://leetcode.com/problems/partition-labels/)
+```java
+class Solution {
+    public List<Integer> partitionLabels(String S) {
+        /**
+        ababcbaca defegde hijhklij
+        a get on bus, told driver get off at stop of 3
+        b get on bus, ...4
+        a ... 7
+        b ... 6
+        c ... 8
+        b off 
+        a ... 9
+        c off
+        a off 
+        the whole bus is empty now. we got 1st part. 
+        d on the bus, get off at 15 
+        e 13
+        f on bus, off right way
+        e 16
+        ...
+        */
+        
+        //1. get the last index of the char in string
+        int[] positions = new int[26];
+        for(int i = 0; i < S.length(); i++) {
+            positions[S.charAt(i) - 'a'] = i;//a = 9
+        }
+        
+        // 2. find where the bus is empty 
+        List<Integer> res = new ArrayList<>();
+        int pos = 0, newStart = 0;
+        int end = 0;
+        while(pos < S.length()) {
+            end = Math.max(end, positions[S.charAt(pos) - 'a']);
+            if(pos == end) {
+                // bus is empty now
+                res.add(pos - newStart + 1);
+                newStart = pos + 1;
+            }
+            pos++;
+        }
+        return res;
+        
+    }
+}
 
+```
 
