@@ -6,7 +6,7 @@ Data Structures - Algorithms in Java on leetcode
 - [Sort](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/Sort.md)
 - [Greedy](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/Greedy.md)
 - [Search](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/Search.md)
-- [Binary Search]()
+- [Binary Search](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/BinarySearch.md)
 # System Design
 - [Design Patterns](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/DesignPatterns.md)
 
