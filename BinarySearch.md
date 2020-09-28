@@ -1,4 +1,7 @@
-#1 (69) Sqrt(x)
+- [1 (69) Sqrt(x)](https://leetcode.com/problems/sqrtx/description/)
+- [2  (744) Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/)
+
+# 1 (69) Sqrt(x)
 [leetcode](https://leetcode.com/problems/sqrtx/description/)
 ```java
 class Solution {
@@ -38,3 +41,6 @@ class Solution {
     }
 }
 ```
+
+# 2  (744) Find Smallest Letter Greater Than Target
+[Leetcode](https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/)
