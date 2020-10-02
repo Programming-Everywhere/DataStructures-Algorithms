@@ -13,7 +13,7 @@
     1. The left subtree of a node contains only nodes with keys lesser than the node’s key.
     2. The right subtree of a node contains only nodes with keys greater than the node’s key.
     3. The left and right subtree each must also be a binary search tree.
-
+# 2. Full Binary Tree vs Complete Binary Tree vs Perfect BST
 ```html
 Full Binary Tree: A Binary Tree is full if every node has 0 or 2 children. Following are examples of a full binary tree.
 
@@ -43,3 +43,7 @@ Perfect Binary Tree: A Binary tree is Perfect Binary Tree in which all internal 
     /  \        /  \
   40    50    100   40
 ```
+
+# 3. Abstraction & Interface
+- Abstraction: a process of hiding certain details, show only the essential detials. 
+- Interface: it is one of two ways to achieve the abstraction. 
