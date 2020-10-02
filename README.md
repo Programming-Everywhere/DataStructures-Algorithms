@@ -7,8 +7,9 @@ Data Structures - Algorithms in Java on leetcode
 - [Greedy](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/Greedy.md)
 - [Search](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/Search.md)
 - [Binary Search](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/BinarySearch.md)
-# OOP(Object Oriented Programming)
+# Java Classes
 - [OOP](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/OOP.md)
+- [Abstraction & Interface](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/AbstractionInterface.md)
 # System Design
 - [Design Patterns](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/DesignPatterns.md)
 
