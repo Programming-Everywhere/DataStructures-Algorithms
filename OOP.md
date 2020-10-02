@@ -77,3 +77,42 @@ Ford Mustang
 ```
 
 ## polymorphism
+3 conditions:
+- Inheritance
+- Override
+- Upcasting
+```java
+class Animal {
+   public void animalSound() {
+       System.out.println("Animal sounds");
+   }
+}
+
+class Pig extends Animal {
+   public void animalSound() {
+       System.out.println("WEE WEE");
+   }
+}
+
+class Dog extends Animal {
+   public void animalSound() {
+       System.out.println("Bow wow");
+   }
+}
+public class Main {
+  public static void main(String[] args) {
+     Animal myAnimal = new Animal();
+     Animal myPig = new Pig(); //upcasting
+     Animal myDog = new Dog(); //upcasting
+     
+     myAnimal.animalSound();
+     myPig.animalSound();
+     myDog.animalSound();
+  }
+}
+/**
+Animal sounds
+WEE WEE
+Bow wow
+*/
+```
