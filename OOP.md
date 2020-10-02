@@ -50,5 +50,30 @@ class Main {
 }
 ```
 ## inheritance
+inheritance achieves "IS-A" relationship. Cat and Animal is "IS-A" relationship, so Cat can inheritent from Animal, but not verse versa. (Non-Private)
+- child: subclass
+- parent: superclass
+- using extends keyword after the child class Name
+```java
+class Vehicle {
+  protected String brand = "Ford";        // Vehicle attribute
+  public void honk() {                    // Vehicle method
+    System.out.println("Tuut, tuut!");
+  }
+}
+
+class Car extends Vehicle {
+  private String modelName = "Mustang";    // Car attribute
+  public static void main(String[] args) {
+    Car myCar = new Car();
+    myCar.honk();
+    System.out.println(myCar.brand + " " + myCar.modelName);
+  }
+}
+/*
+Tuut, tuut!
+Ford Mustang
+*/
+```
 
 ## polymorphism
