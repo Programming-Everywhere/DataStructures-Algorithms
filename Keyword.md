@@ -1,11 +1,11 @@
 # Keyword
-- 1. Binary tree and Binary Search Tree 
--2. Balanced BST]
-- 3. Full Binary Tree vs Complete Binary Tree vs Perfect BST
-- 4. Abstraction
-- 5. Interface
-- 6. Override
-- 7. Overloading
+- Binary tree and Binary Search Tree 
+- Balanced BST]
+- Full Binary Tree vs Complete Binary Tree vs Perfect BST
+- Abstraction
+- Interface
+- Override
+- Overloading
 
 # 1. Binary tree and Binary Search Tree 
 - Binary Tree: A tree whose elements have at most 2 children is called a binary tree
