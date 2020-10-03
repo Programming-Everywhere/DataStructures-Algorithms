@@ -47,3 +47,9 @@ Perfect Binary Tree: A Binary tree is Perfect Binary Tree in which all internal 
 # 3. Abstraction & Interface
 - Abstraction: a process of hiding certain details, show only the essential detials. 
 - Interface: it is one of two ways to achieve the abstraction. 
+
+# 4. override vs overloading
+- override: 
+- overloading
+![overriding-vs-overloading-in-java](https://user-images.githubusercontent.com/19642027/94990186-1dc27700-0548-11eb-9951-468ee55920ed.png)
+
