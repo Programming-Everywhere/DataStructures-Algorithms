@@ -1,6 +1,8 @@
 - [1 (69) Sqrt(x)](https://leetcode.com/problems/sqrtx/description/)
 - [2  (744) Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/)
 - [3 (540) Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/description/)
+- [4. (278) First Bad Version](https://leetcode.com/problems/first-bad-version/)
+
 
 # 1 (69) Sqrt(x)
 [leetcode](https://leetcode.com/problems/sqrtx/description/)
@@ -97,6 +99,7 @@ class Solution {
 }
 ```
 # 4. (278) First Bad Version
+[leetcode](https://leetcode.com/problems/first-bad-version/)
 ```java
 public class Solution extends VersionControl {
     public int firstBadVersion(int n) {
@@ -119,5 +122,28 @@ public class Solution extends VersionControl {
         }
         return low;
     }
+}
+```
+# 5. 
+```java
+class Solution {
+  public int findMin(int[] nums) {
+     // 5,6,0,1,2,3,4
+     int left = 0, right = nums.length - 1;
+     while(left < right) {
+        int mid = left + (right - left) / 2;
+        if(mid >= 1 &&nums[mid] < nums[mid-1]) {
+            return nums[mid];
+        } 
+        else if(nums[mid] < nums[right]){ 
+             right = mid - 1;
+        }
+        else {
+             left = mid + 1;
+        }
+     }
+     return nums[left];
+  
+  }
 }
 ```
