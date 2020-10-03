@@ -2,6 +2,7 @@
 - [2  (744) Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/)
 - [3 (540) Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/description/)
 - [4. (278) First Bad Version](https://leetcode.com/problems/first-bad-version/)
+- [153. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/)
 
 
 # 1 (69) Sqrt(x)
@@ -124,7 +125,8 @@ public class Solution extends VersionControl {
     }
 }
 ```
-# 5. 
+# 5.(153) Find Minimum in Rotated Sorted Array
+[leetcode](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/)
 ```java
 class Solution {
   public int findMin(int[] nums) {
