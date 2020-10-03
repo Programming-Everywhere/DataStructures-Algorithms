@@ -50,6 +50,9 @@ Perfect Binary Tree: A Binary tree is Perfect Binary Tree in which all internal 
 
 # 4. override vs overloading
 - override: 
-- overloading
+- overloading:
 ![overriding-vs-overloading-in-java](https://user-images.githubusercontent.com/19642027/94990186-1dc27700-0548-11eb-9951-468ee55920ed.png)
 
+Use @Override Pro:
+- Use it every time you override a method for two benefits. Do it so that you can take advantage of the compiler checking to make sure you actually are overriding a method when you think you are. This way, if you make a common mistake of misspelling a method name or not correctly matching the parameters, you will be warned that you method does not actually override as you think it does.
+- Secondly, it makes your code easier to understand because it is more obvious when methods are overwritten.
