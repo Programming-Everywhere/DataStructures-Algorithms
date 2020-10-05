@@ -7,6 +7,7 @@ Data Structures - Algorithms in Java on leetcode
 - [Greedy](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/Greedy.md)
 - [Search](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/Search.md)
 - [Binary Search](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/BinarySearch.md)
+- [Divide and conquer](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/DivideAndConquer.md)
 # Java Classes
 - [OOP](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/OOP.md)
 - [Abstraction & Interface](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/AbstractionInterface.md)
