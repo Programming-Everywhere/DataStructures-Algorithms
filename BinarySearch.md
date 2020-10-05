@@ -3,6 +3,7 @@
 - [3 (540) Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/description/)
 - [4. (278) First Bad Version](https://leetcode.com/problems/first-bad-version/)
 - [5. (153) Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/)
+- [6. (34) Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 
 
 # 1 (69) Sqrt(x)
@@ -147,5 +148,58 @@ class Solution {
      return nums[left];
   
   }
+}
+```
+# 6. (34) Find First and Last Position of Element in Sorted Array
+[leetcode](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+```java
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+          // [5,7,7,8,8,10]  t = 8
+         
+          int[] res = {-1, -1};
+          if(nums.length == 0 || nums == null) return res;
+          res[0] = findLeft(nums,target);
+          res[1] = findRight(nums, target);
+          return res;
+    }
+    private int findLeft(int[] nums, int target) {
+        int low = 0, high = nums.length - 1;
+        int startPoint = -1;
+        while(low <= high) {
+           int mid = low + (high - low) / 2;
+           if(nums[mid] == target) {
+              // find mid's left still is the target
+              startPoint = mid;
+              high = mid - 1;
+           }
+           else if(nums[mid] < target) {
+              low = mid + 1;
+           }
+           else {
+             high = mid - 1;
+           }
+        }
+        return startPoint;
+    }
+    private int findRight(int[] nums, int target) {
+        int low = 0, high = nums.length - 1;
+        int endPoint = -1;
+        while(low <= high) {
+           int mid = low + (high - low) / 2;
+           if(nums[mid] == target) {
+              // find mid's left still is the target
+              endPoint = mid;
+              low = mid + 1;
+           }
+           else if(nums[mid] < target) {
+              low = mid + 1;
+           }
+           else {
+             high = mid - 1;
+           }
+        }
+        return endPoint;
+    }
 }
 ```
