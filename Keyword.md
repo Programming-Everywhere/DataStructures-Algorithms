@@ -1,6 +1,6 @@
 # Keyword
 - Binary tree and Binary Search Tree 
-- Balanced BST]
+- Balanced BST
 - Full Binary Tree vs Complete Binary Tree vs Perfect BST
 - Abstraction
 - Interface
