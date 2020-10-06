@@ -4,6 +4,7 @@
 - [4. (278) First Bad Version](https://leetcode.com/problems/first-bad-version/)
 - [5. (153) Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/)
 - [6. (34) Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+- [7. Binary Searchable Elements (Google onsite Oct 2020)](https://leetcode.com/discuss/interview-question/879774/google-onsite-binary-searchable-elements)
 
 
 # 1 (69) Sqrt(x)
