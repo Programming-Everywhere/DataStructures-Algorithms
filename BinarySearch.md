@@ -203,3 +203,42 @@ class Solution {
     }
 }
 ```
+# 7. Binary Searchable Elements (Google onsite Oct 2020)
+```html
+Binary search is a search algorithm usually used on a sorted sequence to quickly find an element with a given value. 
+In this problem we will evaluate how binary search performs on data that isn't necessarily sorted. 
+An element is said to be binary searchable if an element can be found provided the pivot is chosen everytime as the 
+middle element - like in a regular binary search.
+We need to find total number of elements which are binary searchable.
+
+Example 1:
+[2, 1, 3, 4, 6, 5] 
+Output: 4
+Explanation: 3 is searchable, 2 is searchable, 1 not searchable, 6 is searchable, 4 is seachable, 5 is not searchable 
+
+
+Example 2:
+Input: [1, 3, 2]
+Output: 2
+Explanation: 3 and 1 are searchable - you look for 3 - find it in the middle, look for 1 - you search the left half....search for 2, 
+you look for it in the left half but didn't find.
+```
+```java
+// pretend the array is a binary search tree, DFS/BFS all pivot elements and keep track the lower and upper bound for the left and right children
+class Solution {
+   int count = 0;
+   public int BS(int[] arr) {
+       checkTree(arr, Integer.MIN_VALUE, Integer.MAX_VALUE, 0, arr.length - 1);
+       return count;
+   }
+   private void checkTree(int[] arr, int min, int max, int low, int high) {
+      if(low > high) return;
+      int mid = low + (high - low) / 2;
+      if(arr[mid] > min && arr[mid] < max) {
+         count++;
+      }
+      checkTree(arr, min, arr[mid], low, mid - 1);
+      checkTree(arr, arr[mid], max, mid + 1, high);
+   }
+}
+```
