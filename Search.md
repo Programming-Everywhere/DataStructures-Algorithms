@@ -1,9 +1,18 @@
-# DFS
+### DFS
 - [1. (1239) Maximum Length of a Concatenated String with Unique Characters](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
+
+### BFS 
+- [1.(1091) Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/)
+
+# BFS (Breadth first search)
+ - 广度优先搜索一层一层的进行遍历。
+ - 每层遍历都是以上一层遍历的结果作为起点。
+ - 遍历一个距离能访问的所有节点
+ - 访问过的节点不能再次被遍历
+ 
 
 ## 1. (1239) Maximum Length of a Concatenated String with Unique Characters
 ![Untitled (Draft)-1](https://user-images.githubusercontent.com/19642027/93666920-0f586380-fa50-11ea-99ec-d02bae389f94.jpg)
-
 [leetcode](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
 ```java
 class Solution {
