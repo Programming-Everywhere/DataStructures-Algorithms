@@ -9,6 +9,7 @@
  - 每层遍历都是以上一层遍历的结果作为起点。
  - 遍历一个距离能访问的所有节点
  - 访问过的节点不能再次被遍历
+![Untitled (Draft)-1](https://user-images.githubusercontent.com/19642027/95317898-cc75f880-0863-11eb-99de-afc62407a41b.jpg)
  
 
 ## 1. (1239) Maximum Length of a Concatenated String with Unique Characters
