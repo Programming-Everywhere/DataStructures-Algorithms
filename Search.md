@@ -3,6 +3,7 @@
 
 ### BFS 
 - [1.(1091) Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/)
+- [2. (279) Perfect Squares](https://leetcode.com/problems/perfect-squares/)
 
 # BFS (Breadth first search)
  - 广度优先搜索一层一层的进行遍历。
@@ -56,9 +57,53 @@
         return -1;
     }
 }
+```
+# 2. (279) Perfect Squares
+[leetcode](https://leetcode.com/problems/perfect-squares/)
+```java
+class Solution {
+    public int numSquares(int n) {
+        //13 = 4 + 9 = 2^2 + 3^2
+        /* 1 4 9 -> 2 5 10 
+                 -> 5 8 13(x)
+                 -> 10 13(x)
+         */
+        /*
+        start from node 0 in the queue, then keep pushing perfect number + curr number, once we reach to n, we got the result. meanwhile we need to count
+        */
+        Queue<Integer> queue = new LinkedList<>();
+        Set<Integer> visited = new HashSet<>();
+        queue.add(0);
+        visited.add(0);
+        int count = 1;
+        
+        while(!queue.isEmpty()) {
+            int size = queue.size();
+            
+            for(int i = 0; i< size; i++) {
+                int top = queue.poll();
  
- ```
+                for(int j = 1; j * j <= n; j++) {
+                    int curr = top + j * j;
+                    if(curr == n) {
+                        return count;
+                    }
+                    else if(curr > n) {
+                        break;
+                    }
+                    else if(!visited.contains(curr)) {
+                        queue.add(curr);
+                        visited.add(curr);
+                    }
+                }
+            }
+            count++;
+        }
+        return count;
+    }
+}
 
+```
  
  
  
