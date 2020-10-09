@@ -3,7 +3,8 @@
 
 ### BFS 
 - [1.(1091) Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/)
-- [2. (279) Perfect Squares](https://leetcode.com/problems/perfect-squares/)
+- [2.(279) Perfect Squares](https://leetcode.com/problems/perfect-squares/)
+- [3.(127) Word Ladder](https://leetcode.com/problems/word-ladder/)
 
 # BFS (Breadth first search)
  - 广度优先搜索一层一层的进行遍历。
@@ -58,7 +59,7 @@
     }
 }
 ```
-# 2. (279) Perfect Squares
+## 2. (279) Perfect Squares
 [leetcode](https://leetcode.com/problems/perfect-squares/)
 ```java
 class Solution {
@@ -104,7 +105,63 @@ class Solution {
 }
 
 ```
+## 3.(127) Word Ladder
+[leetcode](https://leetcode.com/problems/word-ladder/)
+```java
+class Solution {
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+/*
+d*g=[dog], c*g=[cog], 
+
+ho*=[hot], *og=[dog, log, cog], h*t=[hot], 
+lo*=[lot, log], l*t=[lot], l*g=[log], 
+
+do*=[dot, dog], *ot=[hot, dot, lot], d*t=[dot], 
+co*=[cog]}
+
+*/
+        int L = beginWord.length();
+        Map<String, List<String>> allCombo = new HashMap<>();
+        //1. Transform
+        for(String word: wordList) {
+            for(int i = 0; i < word.length(); i++) {
+                String newWord = word.substring(0, i) + "*" + word.substring(i+1);
+                List<String> transformations = allCombo.getOrDefault(newWord, new ArrayList<>());
+                transformations.add(word);
+                allCombo.put(newWord, transformations);
+            }
+        }
+        System.out.println(allCombo);
  
+        //2. BFS
+        Queue<Pair<String, Integer>> queue = new LinkedList<>();
+        queue.add(new Pair(beginWord, 1));
+        
+        Map<String, Boolean> visited = new HashMap<>();
+        visited.put(beginWord, true);
+        
+        while(!queue.isEmpty()) {
+            Pair<String, Integer> node = queue.poll();
+            String word = node.getKey();
+            int level = node.getValue();
+            for(int i = 0; i < L; i++) {
+                String newWord = word.substring(0, i) +  "*" + word.substring(i + 1);
+                for(String adj: allCombo.getOrDefault(newWord, new ArrayList<>())) {
+                    if(adj.equals(endWord)) {
+                        return level + 1;
+                    }
+                    if(!visited.containsKey(adj)) {
+                        queue.add(new Pair(adj, level + 1));
+                        visited.put(adj, true);
+                    }
+                }
+            }
+        }
+        return 0;
+    }
+}
+```
+
  
  
 # DFS (Depth first search)
