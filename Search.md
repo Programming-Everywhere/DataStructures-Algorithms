@@ -165,13 +165,13 @@ co*=[cog]}
  
  
 # DFS (Depth first search)
-![Untitled (Draft)-1](https://user-images.githubusercontent.com/19642027/93666920-0f586380-fa50-11ea-99ec-d02bae389f94.jpg)
 1. 到达一个节点，然后对这个节点进行彻底的搜索，一直到底。
 2. 然后再返回到原节点，对下个邻居进行彻底搜索
 3. DFS常常来求“可达性”问题。
 4. 用 Stack: DFS uses a Stack to remember where it should go when it reaches a dead end.
 5. Visited[] 和BFS一样。
 ## 1. (1239) Maximum Length of a Concatenated String with Unique Characters
+![Untitled (Draft)-1](https://user-images.githubusercontent.com/19642027/93666920-0f586380-fa50-11ea-99ec-d02bae389f94.jpg)
 [leetcode](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
 ```java
 class Solution {
@@ -203,5 +203,4 @@ class Solution {
         return true;
     }
 }
-
 ```
