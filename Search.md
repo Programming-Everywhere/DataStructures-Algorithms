@@ -4,7 +4,7 @@
 - [3.(127) Word Ladder](https://leetcode.com/problems/word-ladder/)
 
 ### DFS
-- [1. (1239) Maximum Length of a Concatenated String with Unique Characters](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
+- [1.(1239) Maximum Length of a Concatenated String with Unique Characters](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
 - [2.(695) Max Area of Island](https://leetcode.com/problems/max-area-of-island/description/)
 
 # BFS (Breadth first search)
@@ -208,5 +208,78 @@ class Solution {
 ## 2.(695) Max Area of Island
 [leetcode](https://leetcode.com/problems/max-area-of-island/description/)
 ```java
+//BFS
+class Solution {
+    int[][] directions = {{1,0},{-1,0},{0,1},{0,-1}};
+    public int maxAreaOfIsland(int[][] grid) {
+        if(grid.length == 0 || grid == null) return 0;
+        int m = grid.length;
+        int n = grid[0].length;
+        int count = 0, res = 0;
+        boolean[][]visited = new boolean[m][n];
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                if(grid[i][j] == 1 && !visited[i][j]) {
+                    count = BFS(grid, i, j, visited);
+                    res = Math.max(res, count);
+                }
+            }
+        }
+        return res;
+    }
+    private int BFS(int[][] grid, int row, int col, boolean[][] visited) {
+        Queue<int[]> queue = new LinkedList<>();
+        queue.add(new int[]{row, col});
+        visited[row][col] = true;
+        int res = 0;
+        while(!queue.isEmpty()) {
+            int[] curr = queue.poll();
+            res++;
+            for(int[] dir: directions) {
+                int x = dir[0] + curr[0];
+                int y = dir[1] + curr[1];
+                if(x < grid.length && x >= 0 && y < grid[0].length && y >= 0 &&
+                  !visited[x][y] && grid[x][y] == 1) {
+                    queue.add(new int[]{x, y});
+                    visited[x][y] = true;
+                }
+            }
+        }
+        return res;
+    }
+}
+
+//DFS
+class Solution {
+    int count = 0;
+    int res = 0;
+    public int maxAreaOfIsland(int[][] grid) {
+        boolean[][] visited = new boolean[grid.length][grid[0].length];
+        for(int i = 0; i < grid.length; i++) {
+            for(int j = 0; j < grid[0].length; j++) {
+                if(grid[i][j] == 1) {
+                    count = 0;
+                    DFS(grid, i, j, visited);
+                    visited[i][j] = true;
+                }
+            }
+        }
+        return res;
+    }
+    private void DFS(int[][] grid, int row, int col, boolean[][] visited) {
+        if(row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || grid[row][col] != 1 || visited[row][col]) {
+            return;
+        }
+        //1. modified the original input: grid[row][col] = -1;
+        visited[row][col] = true;
+        count++;
+        DFS(grid, row+1, col,visited );
+        DFS(grid, row-1, col,visited);
+        DFS(grid, row, col+1,visited);
+        DFS(grid, row, col-1,visited);
+        
+        res = Math.max(res, count);
+    }
+}
 ```
 
