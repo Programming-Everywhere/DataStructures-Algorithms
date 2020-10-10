@@ -1,10 +1,11 @@
-### DFS
-- [1. (1239) Maximum Length of a Concatenated String with Unique Characters](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
-
 ### BFS 
 - [1.(1091) Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/)
 - [2.(279) Perfect Squares](https://leetcode.com/problems/perfect-squares/)
 - [3.(127) Word Ladder](https://leetcode.com/problems/word-ladder/)
+
+### DFS
+- [1. (1239) Maximum Length of a Concatenated String with Unique Characters](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
+- [2.(695) Max Area of Island](https://leetcode.com/problems/max-area-of-island/description/)
 
 # BFS (Breadth first search)
  - 广度优先搜索一层一层的进行遍历。
@@ -204,3 +205,8 @@ class Solution {
     }
 }
 ```
+## 2.(695) Max Area of Island
+[leetcode](https://leetcode.com/problems/max-area-of-island/description/)
+```java
+```
+
