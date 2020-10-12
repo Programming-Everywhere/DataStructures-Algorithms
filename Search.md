@@ -6,6 +6,7 @@
 ### DFS
 - [1.(1239) Maximum Length of a Concatenated String with Unique Characters](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
 - [2.(695) Max Area of Island](https://leetcode.com/problems/max-area-of-island/description/)
+- [3.(200) Number of Islands](https://leetcode.com/problems/number-of-islands/)
 
 # BFS (Breadth first search)
  - 广度优先搜索一层一层的进行遍历。
@@ -282,4 +283,77 @@ class Solution {
     }
 }
 ```
+
+# 3.(200) Number of Islands
+[leetcode](https://leetcode.com/problems/number-of-islands/)
+```java
+//DFS
+class Solution {
+    public int numIslands(char[][] grid) {
+        if( grid.length == 0 || grid == null) return 0;
+        int m = grid.length;
+        int n = grid[0].length;
+        int count = 0;
+        boolean[][] visited = new boolean[m][n];
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                if(grid[i][j] == '1' && !visited[i][j]) {
+                    DFS(grid, i, j, visited);
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    private void DFS(char[][] grid, int row, int col, boolean[][] visited) {
+        if(row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || grid[row][col] != '1' || visited[row][col] ) {
+            return;
+        }
+        visited[row][col] = true;
+        DFS(grid,row+1, col,visited);
+        DFS(grid,row-1, col,visited);
+        DFS(grid,row, col+1,visited);
+        DFS(grid,row, col-1,visited);
+    }
+}
+//BFS
+class Solution {
+    int[][] directions = {{-1,0},{1,0},{0,-1},{0,1}};
+    public int numIslands(char[][] grid) {
+        if(grid.length == 0 || grid == null) return 0;
+        
+        boolean[][] visited = new boolean[grid.length][grid[0].length];
+        int count = 0;
+        for(int i = 0; i < grid.length; i++) {
+            for(int j = 0; j < grid[0].length; j++) {
+                if(!visited[i][j] && grid[i][j] == '1') {
+                    BFS(grid, i, j, visited);
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    
+    private void BFS(char[][] grid, int i, int j, boolean[][] visited) {
+        
+        Queue<int[]> queue = new LinkedList<>();
+        queue.add(new int[]{i,j});
+        visited[i][j] = true;
+        
+        while(!queue.isEmpty()) {
+            int[] poll = queue.poll();
+            for(int[] dir: directions) {
+                int x = dir[0] + poll[0];
+                int y = dir[1] + poll[1];
+                if(x >= 0 && x < grid.length && y >= 0 && y < grid[0].length && grid[x][y] == '1' && !visited[x][y]) {
+                    queue.add(new int[]{x, y});
+                    visited[x][y] = true;
+                }
+            }
+        }
+    }
+}
+```
+
 
