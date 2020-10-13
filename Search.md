@@ -7,6 +7,7 @@
 - [1.(1239) Maximum Length of a Concatenated String with Unique Characters](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
 - [2.(695) Max Area of Island](https://leetcode.com/problems/max-area-of-island/description/)
 - [3.(200) Number of Islands](https://leetcode.com/problems/number-of-islands/)
+- [4.(547) Friend Circles](https://leetcode.com/problems/friend-circles/)
 
 # BFS (Breadth first search)
  - 广度优先搜索一层一层的进行遍历。
@@ -355,5 +356,69 @@ class Solution {
     }
 }
 ```
+# 4. (547) Friend Circles
+[leetcode](https://leetcode.com/problems/friend-circles/)
+```java
+//DFS
+class Solution {
+    public int findCircleNum(int[][] M) {
+       /*
+         [1,1,0], ->row = 0, M[0][0] = 1, M[0][1]=1, 0->(0,1)
+         [1,1,1], ->row = 1, M[1][0] = 1, M[1][1]=1,M[1][2]=1 1->(0,1,2)
+         [0,1,1]  ->row = 2, M[2][1] = 1, M[2][2]=1, 2->(1,2)
+         
+          0->(1) 
+          1->(0,2)
+          2->(1)
+       */
+        boolean[] visited = new boolean[M.length];
+        int count = 0;
+        for(int row = 0; row < M.length; row++) {
+            if(!visited[row]) {
+                DFS(M, row, visited);
+                count++;
+            }
+        }
+        return count;
+    }
+    private void DFS(int[][] M, int row, boolean[] visited) {
+        for(int col = 0; col < M[0].length; col++) {
+            if(M[row][col] == 0) continue;
+            else if(M[row][col] == 1 && !visited[col]) {
+                visited[col] = true;
+                DFS(M, col, visited);
+                
+            }
+        }
+    }
+}
+//BFS
+class Solution {
+    public int findCircleNum(int[][] M) {
 
+        boolean[] visited = new boolean[M.length];
+        Queue<Integer> queue = new LinkedList<>();
+        int count = 0;
+        
+        for(int row = 0; row < M.length; row++) {
+            if(!visited[row]) {
+                queue.add(row);
+                
+                while(!queue.isEmpty()) {
+                    int poll = queue.poll();
+                    visited[poll] = true;
+                    
+                    for(int col = 0; col < M[0].length; col++) {
+                        if(M[poll][col] == 1 && !visited[col]) {
+                            queue.add(col);
+                        }
+                    }
+                }
+                count++;
+            }
+        }
+        return count;
+    }
+}
+```
 
