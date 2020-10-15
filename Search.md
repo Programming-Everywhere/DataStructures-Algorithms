@@ -8,7 +8,8 @@
 - [2.(695) Max Area of Island](https://leetcode.com/problems/max-area-of-island/description/)
 - [3.(200) Number of Islands](https://leetcode.com/problems/number-of-islands/)
 - [4.(547) Friend Circles](https://leetcode.com/problems/friend-circles/)
-- [5. (130) Surrounded Regions](https://leetcode.com/problems/surrounded-regions/description/)
+- [5.(130) Surrounded Regions](https://leetcode.com/problems/surrounded-regions/description/)
+- [6.(417) Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/description/)
 
 # BFS (Breadth first search)
  - 广度优先搜索一层一层的进行遍历。
@@ -475,4 +476,9 @@ class Solution {
     }
 }
 ```
+## 6.(417) Pacific Atlantic Water Flow
+[leetcode](https://leetcode.com/problems/pacific-atlantic-water-flow/description/)
+```java
+```
+
 
