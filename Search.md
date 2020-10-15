@@ -479,6 +479,57 @@ class Solution {
 ## 6.(417) Pacific Atlantic Water Flow
 [leetcode](https://leetcode.com/problems/pacific-atlantic-water-flow/description/)
 ```java
+class Solution {
+    int[][] dir = {{1,0},{-1,0},{0,1},{0,-1}};
+    public List<List<Integer>> pacificAtlantic(int[][] matrix) {
+        List<List<Integer>> res = new ArrayList();
+        if(matrix.length == 0 || matrix == null) return res;
+        
+        Queue<int[]> pBoarder = new LinkedList<>();
+        Queue<int[]> aBoarder = new LinkedList<>();
+        boolean[][] pVisited = new boolean[matrix.length][matrix[0].length];
+        boolean[][] aVisited = new boolean[matrix.length][matrix[0].length];
+        int row = matrix.length, col = matrix[0].length;
+        //fill vertical 
+        for(int i = 0; i < row; i++) {
+            pBoarder.add(new int[] {i, 0});
+            aBoarder.add(new int[] {i, col - 1});
+            pVisited[i][0] = true;
+            aVisited[i][col - 1] = true;
+        }
+        //fill horizontal
+        for(int i = 0; i < col; i++) {
+            pBoarder.add(new int[] {0, i});
+            aBoarder.add(new int[] {row - 1, i});
+            pVisited[0][i] = true;
+            aVisited[row-1][0] = true;
+        }
+        BFS(matrix, pBoarder, pVisited);
+        BFS(matrix, aBoarder, aVisited);
+        for(int i = 0; i < row; i++) {
+            for(int j = 0; j < col; j++) {
+                if(pVisited[i][j] && aVisited[i][j]) {
+                    List<Integer> cur = new ArrayList<>();
+                    cur.add(i);
+                    cur.add(j);
+                    res.add(cur);
+                }
+            }
+        }
+        return res;
+    }
+    private void BFS(int[][] matrix, Queue<int[]> queue, boolean[][] visited ) {
+        while(!queue.isEmpty()) {
+            int[] poll = queue.poll();
+            for(int[] d: dir) {
+                int x = poll[0] + d[0];
+                int y = poll[1] + d[1];
+                if(x >= 0 && x < matrix.length && y >= 0 && y < matrix[0].length && matrix[x][y] >= matrix[poll[0]][poll[1]] && !visited[x][y]) {
+                    visited[x][y] = true;
+                    queue.add(new int[]{x, y});
+                }
+            }
+        }
+    }
+}
 ```
-
-
