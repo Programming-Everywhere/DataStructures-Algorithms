@@ -11,6 +11,9 @@
 - [5.(130) Surrounded Regions](https://leetcode.com/problems/surrounded-regions/description/)
 - [6.(417) Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/description/)
 
+### Backtracking
+- [1.(17) Letter Combinations of a Phone Number (Medium)](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/)
+
 # BFS (Breadth first search)
  - 广度优先搜索一层一层的进行遍历。
  - 每层遍历都是以上一层遍历的结果作为起点。
@@ -533,3 +536,43 @@ class Solution {
     }
 }
 ```
+# Backtracking
+- DFS is for a questions are 'Reachable', bakctracking is for 'get some point then return' 
+- backtracking mainly is for 'Permutations'. ie: {'a', 'b', 'c'} -> every permutation of this.
+- need Visited[] to make sure no re-visited
+- but when in recursive, it should mark it as non-visited.
+## 1.(17) Letter Combinations of a Phone Number (Medium)
+[leetcode](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/)
+```java
+class Solution {
+    Map<String, String> map = new HashMap<>(){{
+         put("2",  "abc");
+         put("3",  "def");
+         put("4",  "ghi");
+         put("5",  "jkl");
+         put("6",  "mno");
+         put("7",  "pqrs");
+         put("8",  "tuv");
+         put("9",  "wxyz");
+    }};
+    public List<String> letterCombinations(String digits) {
+        List<String> res = new ArrayList<>();
+        if(digits.length() == 0) return res;
+        Backtrack(res, "", digits);
+        return res;
+    }
+    private void Backtrack(List<String> res, String curr, String digits) {
+        if(digits.length() == 0) {
+            res.add(curr);
+        }
+        else {
+            String nextDigit = digits.substring(0, 1); // 2 
+            String letters = map.get(nextDigit); // abc 
+            for(int i = 0; i < letters.length(); i++) {
+                Backtrack(res, curr + letters.substring(i, i + 1), digits.substring(1));
+            }
+        }
+    }
+}
+```
+
