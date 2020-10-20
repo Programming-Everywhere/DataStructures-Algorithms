@@ -13,7 +13,8 @@
 
 ### Backtracking
 - [1.(17) Letter Combinations of a Phone Number (Medium)](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/)
-- [2.(93) Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/description/)
+- [[WIP]2.(93) Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/description/)
+- [3.(79) Word Search ](https://leetcode.com/problems/word-search/)
 
 # BFS (Breadth first search)
  - 广度优先搜索一层一层的进行遍历。
@@ -580,4 +581,44 @@ class Solution {
 [leetcode](https://leetcode.com/problems/restore-ip-addresses/description/)
 ```java
 ```
+
+## 3.(79) Word Search 
+[leetcode](https://leetcode.com/problems/word-search/)
+```java
+class Solution {
+    public boolean exist(char[][] board, String word) {
+        if(board == null || board[0].length == 0) return false;
+        int m = board.length;
+        int n = board[0].length;
+        boolean[][] visited = new boolean[m][n];
+        
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                if(DFS(board, visited, i, j, 0, word)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    private boolean DFS(char[][] board,boolean[][] visited, int x, int y, int index,String word) {
+        if(index == word.length()) return true;
+        
+        if(x < 0 || x >= board.length || y < 0 || y >= board[0].length ||
+          board[x][y] != word.charAt(index) || visited[x][y]) {
+            return false;
+        }
+        visited[x][y] = true;
+        if(DFS(board, visited, x + 1, y, index + 1, word) ||
+          DFS(board, visited, x - 1, y, index + 1, word) ||
+          DFS(board, visited, x, y + 1, index + 1, word) ||
+          DFS(board, visited, x, y - 1, index + 1, word)) {
+            return true;
+        }
+        visited[x][y] = false;
+        return false;
+    }
+}
+```
+
 
