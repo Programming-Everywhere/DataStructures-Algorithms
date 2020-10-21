@@ -15,6 +15,7 @@
 - [1.(17) Letter Combinations of a Phone Number (Medium)](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/)
 - [[WIP]2.(93) Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/description/)
 - [3.(79) Word Search ](https://leetcode.com/problems/word-search/)
+- [4.(257) Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/description/)
 
 # BFS (Breadth first search)
  - 广度优先搜索一层一层的进行遍历。
@@ -620,5 +621,10 @@ class Solution {
     }
 }
 ```
+## 4.(257) Binary Tree Paths
+[leetcode](https://leetcode.com/problems/binary-tree-paths/description/)
+```java
+```
+
 
 
