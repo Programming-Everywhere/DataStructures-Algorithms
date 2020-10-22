@@ -2,7 +2,9 @@
 <!-- GFM-TOC -->
 * [Fibonacci sequence](#Fibonacci sequence)
     * [1. Stairs Climbing](#1-Stairs Climbing)
+* [矩阵路径](#矩阵路径)
 <!-- GFM-TOC -->
+
 # Fibonacci sequence
 
 ## 1. Stairs Climbing
