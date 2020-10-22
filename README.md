@@ -5,12 +5,15 @@ Data Structures - Algorithms in Java on leetcode
 - [Two Pointers](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/TwoPointers.md)
 - [Sort](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/Sort.md)
 - [Greedy](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/Greedy.md)
-- [Search](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/Search.md)
 - [Binary Search](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/BinarySearch.md)
 - [Divide and conquer](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/DivideAndConquer.md)
+- [Search](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/Search.md)
+- [Dynamic Programming](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/DP.md)
+
 # Java Classes
 - [OOP](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/OOP.md)
 - [Abstraction & Interface](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/AbstractionInterface.md)
+
 
 # Java File Handling
 - [Create/Write/Read/Delete files](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/File.md)
