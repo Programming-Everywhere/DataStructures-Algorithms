@@ -16,6 +16,7 @@
 - [[WIP]2.(93) Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/description/)
 - [3.(79) Word Search ](https://leetcode.com/problems/word-search/)
 - [4.(257) Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/description/)
+- [5.(46) Permutations](https://leetcode.com/problems/permutations/)
 
 # BFS (Breadth first search)
  - 广度优先搜索一层一层的进行遍历。
@@ -647,6 +648,33 @@ class Solution {
             helper(res, root.right, sb);
         }
         sb.setLength(len);
+    }
+}
+```
+## 5.(46) Permutations
+[leetcode](https://leetcode.com/problems/permutations/)
+```java
+class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> current = new ArrayList<>();
+        for(int n: nums) {
+            current.add(n);
+        }
+        backtrack(nums.length, res, current, 0);
+        return res;
+    }
+    private void backtrack(int n, List<List<Integer>> res, List<Integer> current, int first) {
+        if(first == n) {
+            res.add(new ArrayList<>(current));
+        }
+        else {
+            for(int i = first; i < n; i++) {
+                Collections.swap(current, first, i);
+                backtrack(n, res, current, first + 1);
+                Collections.swap(current, first, i);
+            }
+        }
     }
 }
 ```
