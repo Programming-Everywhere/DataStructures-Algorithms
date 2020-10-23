@@ -2,7 +2,7 @@
 <!-- GFM-TOC -->
 * [FibonacciSequence](#FibonacciSequence)
     * [1. StairsClimbing](#1-StairsClimbing)
-    * [2. HouseRobber](#1-HouseRobber)
+    * [2. HouseRobber](#2-HouseRobber)
 
 <!-- GFM-TOC -->
 
