@@ -4,7 +4,7 @@
     * [1. StairsClimbing](#1-StairsClimbing)
     * [2. HouseRobber](#2-HouseRobber)
     * [3. HouseRobberII](#3-HouseRobberII)
-    
+    * [4. Find-the-Derangement-of-An-Array](#4-Find-the-Derangement-of-An-Array)
 
 <!-- GFM-TOC -->
 
@@ -72,4 +72,27 @@ class Solution {
     }
 }
 //[7,4,1,9,3,8,6]
+```
+## 4. Find-the-Derangement-of-An-Array
+[leetcode](https://leetcode.com/problems/find-the-derangement-of-an-array/)
+```java
+class Solution {
+    public int findDerangement(int n) {
+        // 1, 2, 3, 4, ...n
+        // _, 2, 3, 1, ...n
+        /*1: now 4 can be in 1st position, then we need to find postions for rest of n-2 nums.
+          2: 4 not in 1st place but other place, then we need to find pos for rest of n-1(except 1)
+        */
+        
+        if(n == 0) return 1;
+        if(n == 1) return 0;
+        long[] dp = new long[n + 1];
+        dp[0] = 1;
+        dp[1] = 0;
+        for(int i = 2; i <= n; i++) {
+            dp[i] = (i - 1) * (dp[i - 1] + dp[i - 2]) %1000000007;    
+        }
+       return (int)dp[n];
+    }
+}
 ```
