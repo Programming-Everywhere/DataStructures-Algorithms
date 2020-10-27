@@ -5,6 +5,8 @@
     * [2. HouseRobber](#2-HouseRobber)
     * [3. HouseRobberII](#3-HouseRobberII)
     * [4. Find-the-Derangement-of-An-Array](#4-Find-the-Derangement-of-An-Array)
+    * [5. Cow-production](#5-Cow-production)
+
 
 <!-- GFM-TOC -->
 
@@ -95,4 +97,29 @@ class Solution {
        return (int)dp[n];
     }
 }
+```
+## 5. Cow-production
+```html
+假设农场中成熟的母牛每年都会生 1 头小母牛，并且永远不会死。
+第一年有 1 只小母牛，从第二年开始，母牛开始生小母牛。
+每只小母牛 3 年之后成熟又可以生小母牛。给定整数 N，求 N 年后牛的数量。
+```
+```java
+class Solution {
+   public int cows(int years) {
+      if (year == 0) return 0;
+      if (year == 1) return 1;
+      if (year == 2) return 2;
+      int[] dp = new int[years+1];
+      dp[0] = 0;
+      dp[1] = 1;
+      dp[2] = 2;
+      for(int i = 3; i <= years; i++) {
+         dp[i] = dp[i - 1] + dp[i - 2];
+      }
+      return dp[year];
+   }
+ 
+}
+
 ```
