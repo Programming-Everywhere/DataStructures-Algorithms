@@ -6,6 +6,9 @@
     * [3. HouseRobberII](#3-HouseRobberII)
     * [4. Find-the-Derangement-of-An-Array](#4-Find-the-Derangement-of-An-Array)
     * [5. Cow-production](#5-Cow-production)
+* [MatrixPath](#MatrixPath)
+    * [1. Minimum-Path-Sum](#1-Minimum-Path-Sum)
+
 
 
 <!-- GFM-TOC -->
@@ -121,5 +124,40 @@ class Solution {
    }
  
 }
-
 ```
+# MatrixPath
+
+## 1. Minimum-Path-Sum
+[leetcode](https://leetcode.com/problems/minimum-path-sum/description/)
+```java
+class Solution {
+    public int minPathSum(int[][] grid) {
+       /* bottom up!  
+       1. build a dp[][] to memorize the sum
+       2. then backward to fill dp[][].
+       3. dp[i][j] can have min(dp[i+1][j], dp[i][j+1]);
+       4. finnally return dp[0][0]
+       */
+        int m = grid.length, n = grid[0].length;
+        int[][] dp = new int[grid.length][grid[0].length];
+        for(int i = grid.length - 1; i >= 0; i--) {
+            for(int j = grid[0].length - 1; j >= 0; j--) {
+                if(i == m-1 && j != n - 1){
+                    dp[i][j] = grid[i][j] + dp[i][j+1];
+                }
+                else if(i != m-1 && j == n - 1){
+                    dp[i][j] = grid[i][j] + dp[i+1][j];
+                }
+                else if(i != m-1 && j != n - 1){
+                     dp[i][j] = grid[i][j] + Math.min(dp[i+1][j], dp[i][j+1]); 
+                }
+                else {
+                    dp[i][j] = grid[i][j];
+                }
+            }
+        }
+        return dp[0][0];
+    }
+}
+```
+
