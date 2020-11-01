@@ -46,7 +46,7 @@ class CreateFile {
 }
 ```
 
-#4. Delete a file / folder
+# 4. Delete a file / folder
 ```java
 import java.io.File;
 class DeleteFile {
