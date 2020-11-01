@@ -8,6 +8,8 @@
     * [5. Cow-production](#5-Cow-production)
 * [MatrixPath](#MatrixPath)
     * [1. Minimum-Path-Sum](#1-Minimum-Path-Sum)
+    * [2. Unique-Paths](#2-Unique-Paths)
+
 
 
 
@@ -160,4 +162,29 @@ class Solution {
     }
 }
 ```
-
+## 2. Unique-Paths
+```java
+class Solution {
+    public int uniquePaths(int m, int n) {
+        /*
+        1. fill all with 1 step
+        2. the next total step = totalLeftSteps + totalUpSteps
+        3. until the finish step.
+        */
+        int[][] dp = new int[m][n];
+        for(int i = 0; i < m; i++) {
+            dp[i][0] = 1;
+        }
+         for(int i = 0; i < n; i++) {
+            dp[0][i] = 1;
+        }
+        
+        for(int i = 1; i < m; i++) {
+            for(int j = 1; j < n; j++) {
+                dp[i][j] = dp[i-1][j] + dp[i][j-1];
+            }
+        }
+        return dp[m-1][n-1];
+    }
+}
+```
