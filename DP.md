@@ -9,6 +9,8 @@
 * [MatrixPath](#MatrixPath)
     * [1. Minimum-Path-Sum](#1-Minimum-Path-Sum)
     * [2. Unique-Paths](#2-Unique-Paths)
+* [RangeSum](#RangeSum)
+    * [1. RangeSumQuery](#1-RangeSumQuery)
 
 
 
@@ -188,4 +190,42 @@ class Solution {
         return dp[m-1][n-1];
     }
 }
+```
+# RangeSum
+
+## 1. RangeSumQuery
+[leetcode](https://leetcode.com/problems/range-sum-query-immutable/)
+```java
+class NumArray {
+    // [-2, 0, 3, -5, 2, -1]
+    // [0,-2, -2, 1, -4, -2, -3]
+    // i = 0, j = 2 
+    // i = 2, j = 5, SUM[5+1] - SUM[2] = -3 -(-2) = -1
+    // i = 0, j = 5, SUM[5+1] - SUM[0] = -3
+    /*
+    1. no need to calculate again from previous result
+    2. memorize the result 
+    3. adding each element, and find the sum at rach index. 
+    4. using 0 and helper in the beginning
+    5. then find the diff oof range, this is the result. 
+    */
+    int[] SUM;
+    public NumArray(int[] nums) {
+        SUM = new int[nums.length +1];
+        SUM[0] = 0;
+        for(int i = 1; i <= nums.length; i++) {
+            SUM[i] = SUM[i - 1] + nums[i - 1];
+        }
+    }
+    
+    public int sumRange(int i, int j) {
+       return SUM[j + 1] - SUM[i];
+    }
+}
+
+/**
+ * Your NumArray object will be instantiated and called as such:
+ * NumArray obj = new NumArray(nums);
+ * int param_1 = obj.sumRange(i,j);
+ */
 ```
