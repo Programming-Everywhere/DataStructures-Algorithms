@@ -8,7 +8,10 @@ Data Structures - Algorithms in Java on leetcode
 - [Binary Search](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/BinarySearch.md)
 - [Divide and conquer](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/DivideAndConquer.md)
 - [Search](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/Search.md)
-- [Dynamic Programming](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/DP.md)
+- [Dynamic Programming (Not done yet) ](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/DP.md)
+
+# Data Structure
+- [LinkedList](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/LinkedList.md)
 
 # Java Classes
 - [OOP](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/OOP.md)
