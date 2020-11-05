@@ -12,6 +12,7 @@ Data Structures - Algorithms in Java on leetcode
 
 # Data Structure
 - [LinkedList](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/LinkedList.md)
+- [Tree](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/Tree.md)
 
 # Java Classes
 - [OOP](https://github.com/Programming-Everywhere/DataStructures-Algorithms/blob/master/OOP.md)
