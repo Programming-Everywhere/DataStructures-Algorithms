@@ -1,10 +1,22 @@
 <!-- GFM-TOC -->
 * [Recursive](#Recursive)
      * [1.TreeHeight](#1-TreeHeight)
+     * [2.balanced-binary-tree](#2-balanced-binary-tree)
 <!-- GFM-TOC -->
 
 # Recursive
 ## 1. TreeHeight
+```java
+class Solution {
+    public int maxDepth(TreeNode root) {
+        if(root == null) return 0;
+        else {
+            return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+        }
+    }
+}
+```
+## 2. balanced-binary-tree
 [leetcode](https://leetcode.com/problems/balanced-binary-tree/description/)
 ```java
 class Solution {
