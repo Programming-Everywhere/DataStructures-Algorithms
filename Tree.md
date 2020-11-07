@@ -2,6 +2,7 @@
 * [Recursive](#Recursive)
      * [1.TreeHeight](#1-TreeHeight)
      * [2.balanced-binary-tree](#2-balanced-binary-tree)
+     * [3.DiameterBinaryTree](#3-DiameterBinaryTree)
 <!-- GFM-TOC -->
 
 # Recursive
@@ -33,6 +34,33 @@ class Solution {
             return -2;
         }
         return Math.max(leftHeight, rightHeight) + 1;
+    }
+}
+```
+## 3. DiameterBinaryTree
+[leetcode](https://leetcode.com/problems/diameter-of-binary-tree/description/)
+```java
+class Solution {
+    int res = 0;
+    public int diameterOfBinaryTree(TreeNode root) {
+        /*
+        1. find two length here: a, pass the root. b, don't pass the root
+        2. compare these two length
+        */
+        int height = findHeight(root);
+        return res;
+    }
+    private int findHeight(TreeNode root) {
+        if(root == null) {
+            return 0;
+        }
+        else {
+            int L = findHeight(root.left);
+            int R = findHeight(root.right);
+            
+            res = Math.max(res, L+R); // didn't pass the root
+            return Math.max(L, R) + 1;
+        }
     }
 }
 ```
