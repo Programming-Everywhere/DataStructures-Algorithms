@@ -3,6 +3,7 @@
      * [1.TreeHeight](#1-TreeHeight)
      * [2.balanced-binary-tree](#2-balanced-binary-tree)
      * [3.DiameterBinaryTree](#3-DiameterBinaryTree)
+     * [4.InvertBinaryTree](#4-InvertBinaryTree)
 <!-- GFM-TOC -->
 
 # Recursive
@@ -61,6 +62,21 @@ class Solution {
             res = Math.max(res, L+R); // didn't pass the root
             return Math.max(L, R) + 1;
         }
+    }
+}
+```
+## 4. InvertBinaryTree
+[leetcode](https://leetcode.com/problems/invert-binary-tree/description/)
+```java
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if(root == null) return null;
+        
+        TreeNode temp = root.left;
+        root.left = invertTree(root.right);
+        root.right = invertTree(temp);
+        return root;
+        
     }
 }
 ```
