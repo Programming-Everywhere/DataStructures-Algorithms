@@ -4,6 +4,8 @@
      * [2.balanced-binary-tree](#2-balanced-binary-tree)
      * [3.DiameterBinaryTree](#3-DiameterBinaryTree)
      * [4.InvertBinaryTree](#4-InvertBinaryTree)
+* [LevelTraversal](#LevelTraversal)
+     * [1.AverageofLevelsinBinaryTree](#1-AverageofLevelsinBinaryTree)
 <!-- GFM-TOC -->
 
 # Recursive
@@ -77,6 +79,36 @@ class Solution {
         root.right = invertTree(temp);
         return root;
         
+    }
+}
+```
+# LevelTraversal
+
+## 1. AverageofLevelsinBinaryTree
+[leetcode](https://leetcode.com/problems/average-of-levels-in-binary-tree/description/)
+```java
+lass Solution {
+    public List<Double> averageOfLevels(TreeNode root) {
+        List<Double> res = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList();
+        queue.add(root);
+        double sum = 0;
+        while(!queue.isEmpty()) {
+            int size = queue.size();
+            for(int i = 0; i < size; i++) {
+                TreeNode curr = queue.poll();
+                sum += curr.val;
+                if(curr.left != null) {
+                    queue.add(curr.left);
+                }
+                if(curr.right != null) {
+                    queue.add(curr.right);
+                }
+            }
+            res.add(sum / size);
+            sum = 0;
+        }
+        return res;
     }
 }
 ```
