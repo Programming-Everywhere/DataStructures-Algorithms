@@ -6,6 +6,7 @@
      * [4.InvertBinaryTree](#4-InvertBinaryTree)
 * [LevelTraversal](#LevelTraversal)
      * [1.AverageofLevelsinBinaryTree](#1-AverageofLevelsinBinaryTree)
+     * [2.FindBottomLeftTreeValue](#2-FindBottomLeftTreeValue)
 <!-- GFM-TOC -->
 
 # Recursive
@@ -109,6 +110,27 @@ lass Solution {
             sum = 0;
         }
         return res;
+    }
+}
+```
+## 2. FindBottomLeftTreeValue
+```java
+class Solution {
+    public int findBottomLeftValue(TreeNode root) {
+        if(root == null) return 0;
+        TreeNode res = null;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()) {
+            int size = queue.size();
+            res = queue.peek();
+            for(int i = 0; i < size; i++) {
+                TreeNode curr = queue.poll();
+                if(curr.left != null) queue.add(curr.left);
+                if(curr.right != null) queue.add(curr.right);
+            }
+        }
+        return res.val;
     }
 }
 ```
