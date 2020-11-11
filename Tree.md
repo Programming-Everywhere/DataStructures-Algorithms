@@ -7,6 +7,8 @@
 * [LevelTraversal](#LevelTraversal)
      * [1.AverageofLevelsinBinaryTree](#1-AverageofLevelsinBinaryTree)
      * [2.FindBottomLeftTreeValue](#2-FindBottomLeftTreeValue)
+* [OrderTraversal](#OrderTraversal)
+     * [1. BinaryTreePreorderTraversal](BinaryTreePreorderTraversal)
 <!-- GFM-TOC -->
 
 # Recursive
@@ -133,4 +135,11 @@ class Solution {
         return res.val;
     }
 }
+```
+# OrderTraversal
+
+## 1. BinaryTreePreorderTraversal
+[leetcode](https://leetcode.com/problems/binary-tree-preorder-traversal/description/)
+```java
+
 ```
