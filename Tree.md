@@ -8,7 +8,9 @@
      * [1.AverageofLevelsinBinaryTree](#1-AverageofLevelsinBinaryTree)
      * [2.FindBottomLeftTreeValue](#2-FindBottomLeftTreeValue)
 * [OrderTraversal](#OrderTraversal)
-     * [1. BinaryTreePreorderTraversal](BinaryTreePreorderTraversal)
+     * [1. BinaryTreePreorderTraversal](#1-BinaryTreePreorderTraversal)
+* [LCA](#LCA)
+     * [1. LCA](#1-LCA)
 <!-- GFM-TOC -->
 
 # Recursive
@@ -140,6 +142,13 @@ class Solution {
 
 ## 1. BinaryTreePreorderTraversal
 [leetcode](https://leetcode.com/problems/binary-tree-preorder-traversal/description/)
+```java
+
+```
+
+# LCA
+## 1. LCA
+[leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 ```java
 
 ```
