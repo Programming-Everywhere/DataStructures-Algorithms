@@ -150,5 +150,36 @@ class Solution {
 ## 1. LCA
 [leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 ```java
-
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(root == null) return null;
+        if(p == root || q == root) {
+            return root;
+        }
+        TreeNode Left = lowestCommonAncestor(root.left, p, q);
+        TreeNode Right = lowestCommonAncestor(root.right, p, q);
+        
+        if(Left != null && Right != null) {
+            return root;
+        }
+        if(Left == null && Right != null) {
+            System.out.println("right= " + Right.val);
+            return Right;
+        }
+        if(Left != null && Right == null) {
+            System.out.println("left= " + Left.val);
+            return Left;
+        }
+        return null;
+    }
+}
 ```
