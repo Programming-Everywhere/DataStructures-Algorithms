@@ -1,3 +1,10 @@
+```html
+1. Quick sort: find pivot, comparing each element to pivot, smaller one on left, bigger one on right of pivot. Swap pivot
+2. Same bucket frenquenct=y
+3. three pointers 
+```
+
+
 - 1 215. Kth Largest Element in an Array
 - 2 347. Top K Frequent Elements
 
