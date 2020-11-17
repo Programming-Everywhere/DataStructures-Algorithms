@@ -1,3 +1,12 @@
+```html
+Two pointers scinarios: 
+1. left_pointer and right_pointer, iterate towards the middle
+2. ptr1 = 0, ptr2 = Math.sqrt(num)
+3. walke = head, runner = head
+4. ptr1 = 0, ptr2 = 0
+```
+
+
 1. [167. Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/)
 2. [633. Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/description/)
 3. [345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/description/)
