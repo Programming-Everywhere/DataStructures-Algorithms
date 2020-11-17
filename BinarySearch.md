@@ -1,3 +1,7 @@
+```html
+1. mid = left + (right - left)/2
+```
+
 - [1 (69) Sqrt(x)](https://leetcode.com/problems/sqrtx/description/)
 - [2  (744) Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/)
 - [3 (540) Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/description/)
