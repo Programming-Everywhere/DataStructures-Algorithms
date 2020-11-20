@@ -143,7 +143,26 @@ class Solution {
 ## 1. BinaryTreePreorderTraversal
 [leetcode](https://leetcode.com/problems/binary-tree-preorder-traversal/description/)
 ```java
-
+class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        //preorder: root -> left -> right
+        List<Integer> res = new LinkedList<>();
+        if(root == null) return res;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.isEmpty()) {
+            TreeNode curr = stack.pop();
+            res.add(curr.val);
+            if(curr.right != null) {
+                stack.push(curr.right);
+            }
+            if(curr.left != null) {
+                stack.push(curr.left);
+            }
+        }
+        return res;
+    }
+}
 ```
 
 # LCA
