@@ -11,6 +11,8 @@
      * [1. BinaryTreePreorderTraversal](#1-BinaryTreePreorderTraversal)
 * [LCA](#LCA)
      * [1. LCA](#1-LCA)
+* [BST](#BST)
+     * [1.TrimaBST](#1-TrimaBST)
 <!-- GFM-TOC -->
 
 # Recursive
@@ -200,5 +202,18 @@ class Solution {
         }
         return null;
     }
+}
+```
+# BST
+## 1. TrimaBST 
+[leetcode](https://leetcode.com/problems/trim-a-binary-search-tree/description/)
+```java
+public TreeNode trimBST(TreeNode root, int L, int R) {
+    if (root == null) return null;
+    if (root.val > R) return trimBST(root.left, L, R);
+    if (root.val < L) return trimBST(root.right, L, R);
+    root.left = trimBST(root.left, L, R);
+    root.right = trimBST(root.right, L, R);
+    return root;
 }
 ```
